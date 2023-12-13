@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getPosts } from "../redux/Reducer/PostReducer";
+import { getPosts } from "../redux/Slices/PostSlice";
 
 const Home = (): JSX.Element => {
     const posts = useSelector(getPosts);

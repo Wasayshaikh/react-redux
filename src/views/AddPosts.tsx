@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
-import { AddPost, getPosts } from "../redux/Reducer/PostReducer";
+import { AddPost, getPosts } from "../redux/Slices/PostSlice";
 import { useNavigate } from "react-router-dom";
 import { nanoid } from "@reduxjs/toolkit";
 
