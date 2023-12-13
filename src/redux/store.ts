@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import AuthReducer from './Reducer/AuthReducer'
+import PostReducer from './Reducer/PostReducer'
 
 export default configureStore({
   reducer: {
-   AuthUser:AuthReducer
+    posts:PostReducer
   },
 })
