@@ -1,10 +1,14 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { useDispatch } from "react-redux";
 import { AddPost } from "../redux/Slices/PostSlice";
 import { useNavigate } from "react-router-dom";
 import { nanoid } from "@reduxjs/toolkit";
 
 const AddPosts = () => {
+    const formInputs = {
+        title: useRef<HTMLInputElement | null>(null),
+        body: useRef<HTMLTextAreaElement| null>(null)
+    }
     const [PostData, SetPostData] = useState<{ id: string | number, title: string, body: string }>({
         id: 0,
         title: '',
@@ -22,8 +26,26 @@ const AddPosts = () => {
     }
     let FormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        dispatch(AddPost(PostData))
-        navigate('/')
+        if (PostData.body == '' || PostData.title == '') {
+           if(PostData.body == ''){
+            formInputs.body.current!.style.border = "solid 1px red"
+           }
+           else{
+            formInputs.body.current!.style.border = "none"
+           }
+           if (PostData.title == '') {
+            formInputs.title.current!.style.border = "solid 1px red"
+           }
+           else{
+            formInputs.title.current!.style.border = "none"
+           }
+        }
+        else{
+           
+            dispatch(AddPost(PostData))
+            navigate('/')
+        }
+       
     }
     return (
         <>
@@ -34,11 +56,11 @@ const AddPosts = () => {
                     <div className="py-3">
                         <div>
                             <label htmlFor="title" className=" font-semibold" >Title</label>
-                            <input onChange={(e) => FillFormElement(e)} type="text" name="title" value={PostData.title} id="title" className="" />
+                            <input ref={formInputs.title} onChange={(e) => FillFormElement(e)} type="text" name="title" value={PostData.title} id="title" className="" />
                         </div>
                         <div>
                             <label htmlFor="body" className=" font-semibold" >Body</label>
-                            <textarea onChange={(e) => FillFormElement(e)} name="body" id="" className=" min-h-[200px]" defaultValue={PostData.body}></textarea>
+                            <textarea ref={formInputs.body} onChange={(e) => FillFormElement(e)} name="body" id="" className=" min-h-[200px]" defaultValue={PostData.body}></textarea>
                         </div>
                         <div className="flex justify-end">
                             <button type="submit" className="p-2 border-white border-2 rounded-sm bg-blue-500">Add Post</button>
