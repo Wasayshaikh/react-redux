@@ -19,8 +19,8 @@ const Home = (): JSX.Element => {
     ))
     return (
         <div className="container lg:max-w-[1200px] m-auto p-4">
-            <div className="pb-10 flex flex-wrap justify-center md:justify-between items-center">
-                <h2 className="pl-3 text-xl text-center font-semibold w-full md:w-auto py-2 md:py-0">Your Posts</h2><Link to={"/add"} className="p-2 border-gray-300 hover:shadow-lg shadow-gray-300 border-2 rounded-md bg-[#e9e3dc]">Add New Post</Link>
+            <div className="pb-10 px-3 flex flex-wrap justify-center md:justify-between items-center">
+                <h2 className=" text-xl text-center font-semibold w-full md:w-auto py-2 md:py-0">Your Posts</h2><Link to={"/add"} className="p-2 border-gray-300 hover:shadow-lg shadow-gray-300 border-2 rounded-md bg-[#e9e3dc]">Add New Post</Link>
             </div>
             {postComponent}
         </div>
