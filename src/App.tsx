@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-    <div className='w-full bg-gray-500 shadow-md py-8 text-center'><h1 className='text-2xl'>React Redux Project</h1></div>
+    <div className='w-full bg-[#f2f2f2] shadow-md py-8 text-center'><h1 className='text-2xl'>React Redux Project</h1></div>
     <div className='p-4 py-6 text-center'>
     <p className='pt-2'>A react project to show list of posts and add new post</p></div>
       <Routes>
