@@ -49,8 +49,8 @@ const AddPosts = () => {
     }
     return (
         <>
-            <div className="w-full max-w-[400px] m-auto py-10 px-3">
-                <form onSubmit={FormSubmit} className="post-form border-2 bg-[#e9e3dc] border-gray-100 rounded-md p-4">
+            <div className="w-full max-w-[500px] m-auto py-10 px-3">
+                <form onSubmit={FormSubmit} className="post-form border-2 bg-[#f2f2f2] border-[#ffffff] rounded-md p-4">
                     <h2 className="text-lg font-bold">Add Post</h2>
 
                     <div className="py-3">
@@ -63,7 +63,7 @@ const AddPosts = () => {
                             <textarea ref={formInputs.body} onChange={(e) => FillFormElement(e)} name="body" id="" className=" min-h-[200px]" defaultValue={PostData.body}></textarea>
                         </div>
                         <div className="flex justify-end">
-                            <button type="submit" className="p-2 border-gray-300 border-2 rounded-md bg-[#f2f2f2]">Add Post</button>
+                            <button type="submit" className="p-2 border-gray-200 hover:shadow-lg hover:shadow-gray-300 border-2 rounded-md bg-[#f7f5f5]">Add Post</button>
                         </div>
                     </div>
                 </form>
